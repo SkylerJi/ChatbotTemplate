@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
      
       <body className={`${inter.className} h-screen overflow-hidden`}>
-      <main className="bg-gradient-to-b from-black to-orange-800">
+      <main className="bg-black">
   {children}
 </main>
         </body>
