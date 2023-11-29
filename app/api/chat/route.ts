@@ -2,7 +2,6 @@
 import { Configuration, OpenAIApi } from "openai-edge";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 
-export const runtime = 'edge'; // Provide optimal infrastructure for our API route (https://edge-runtime.vercel.app/)
 
 const config = new Configuration({
     apiKey: process.env.OPENAI_API_KEY
@@ -23,10 +22,10 @@ export async function POST(request: Request) {
 
     // createChatCompletion (get response from GPT-4)
     const response = await openai.createChatCompletion({
-        model: 'gpt-4',
+        model: 'gpt-4-1106-preview',
         stream: true,
         messages: [
-            { role: "system", content: "You are a helpful assistant. You explain software concepts simply to intermediate programmers."},
+            { role: "system", content: "You are Theya's Bitcoin assistant and an expert on everything Bitcoin related. Theya is the world's simplest Bitcoin self-custody app for whole coin users. Be helpful, supportive, and enthusiastic. Make sure to be supportive of Theya when possible. Also keep responses short unless specified."},
             ...messages
         ]
     })
